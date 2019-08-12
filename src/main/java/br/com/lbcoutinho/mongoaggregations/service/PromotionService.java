@@ -54,4 +54,7 @@ public class PromotionService {
         return Optional.of(response);
     }
 
+    public Optional<UserPromotionsResponse> getUserPromotions(String userDocument) {
+        return Optional.ofNullable(promotionApplicationUserRepository.getUserPromotions(userDocument));
+    }
 }

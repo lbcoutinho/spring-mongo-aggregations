@@ -3,6 +3,7 @@ package br.com.lbcoutinho.mongoaggregations.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "applicationUser")
@@ -15,6 +16,7 @@ public class ApplicationUser {
 
     private String name;
     private String email;
+    @Indexed
     private String document;
 
 }

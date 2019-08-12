@@ -3,6 +3,7 @@ package br.com.lbcoutinho.mongoaggregations.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "promotionApplicationUser")
@@ -13,6 +14,7 @@ public class PromotionApplicationUser {
     @Id
     private String id;
 
+    @Indexed
     private String userDocument;
     private String promotionId;
     private Boolean used = false;

@@ -18,7 +18,12 @@ public class PromotionController {
     }
 
     @GetMapping("/no-aggregation/user/{document}")
-    public ResponseEntity getUserPromotions(@PathVariable String document) {
+    public ResponseEntity getUserPromotionsNoAggregation(@PathVariable String document) {
         return ResponseEntity.of(promotionService.getUserPromotionsWithoutAggregation(document));
+    }
+
+    @GetMapping("/user/{document}")
+    public ResponseEntity getUserPromotions(@PathVariable String document) {
+        return ResponseEntity.of(promotionService.getUserPromotions(document));
     }
 }
